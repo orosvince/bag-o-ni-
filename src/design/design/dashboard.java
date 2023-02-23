@@ -4,6 +4,9 @@
  * and open the template in the editor.
  */
 package design.design;
+import java.awt.Color;
+import java.util.HashSet;
+import java.util.Set;
 
 /**
  *
@@ -16,7 +19,12 @@ public class dashboard extends javax.swing.JFrame {
      */
     public dashboard() {
         initComponents();
+    
     }
+    Color navbarcolor=new Color(0,51,51);
+    Color headercolor=new Color(102,0,102);
+    Color bodycolor=new Color(204,204,204);
+    
 
     /**
      * This method is called from within the constructor to initialize the form.
@@ -29,6 +37,10 @@ public class dashboard extends javax.swing.JFrame {
 
         jPanel1 = new javax.swing.JPanel();
         navbar = new javax.swing.JPanel();
+        dashpane = new javax.swing.JPanel();
+        jLabel1 = new javax.swing.JLabel();
+        dashpane1 = new javax.swing.JPanel();
+        jLabel3 = new javax.swing.JLabel();
         header = new javax.swing.JPanel();
         jDesktopPane1 = new javax.swing.JDesktopPane();
 
@@ -38,20 +50,48 @@ public class dashboard extends javax.swing.JFrame {
         jPanel1.setLayout(null);
 
         navbar.setBackground(new java.awt.Color(0, 51, 51));
+        navbar.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
-        javax.swing.GroupLayout navbarLayout = new javax.swing.GroupLayout(navbar);
-        navbar.setLayout(navbarLayout);
-        navbarLayout.setHorizontalGroup(
-            navbarLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 140, Short.MAX_VALUE)
-        );
-        navbarLayout.setVerticalGroup(
-            navbarLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 410, Short.MAX_VALUE)
-        );
+        dashpane.setBackground(new java.awt.Color(0, 51, 51));
+        dashpane.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseEntered(java.awt.event.MouseEvent evt) {
+                dashpaneMouseEntered(evt);
+            }
+            public void mouseExited(java.awt.event.MouseEvent evt) {
+                dashpaneMouseExited(evt);
+            }
+        });
+        dashpane.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
+
+        jLabel1.setFont(new java.awt.Font("Century Gothic", 1, 14)); // NOI18N
+        jLabel1.setForeground(new java.awt.Color(255, 255, 255));
+        jLabel1.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
+        jLabel1.setText("DASHBOARD");
+        dashpane.add(jLabel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 10, 120, 20));
+
+        navbar.add(dashpane, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 50, 140, 40));
+
+        dashpane1.setBackground(new java.awt.Color(0, 51, 51));
+        dashpane1.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseEntered(java.awt.event.MouseEvent evt) {
+                dashpane1MouseEntered(evt);
+            }
+            public void mouseExited(java.awt.event.MouseEvent evt) {
+                dashpane1MouseExited(evt);
+            }
+        });
+        dashpane1.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
+
+        jLabel3.setFont(new java.awt.Font("Century Gothic", 1, 14)); // NOI18N
+        jLabel3.setForeground(new java.awt.Color(255, 255, 255));
+        jLabel3.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
+        jLabel3.setText("DASHBOARD");
+        dashpane1.add(jLabel3, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 10, 120, 20));
+
+        navbar.add(dashpane1, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 110, 140, 40));
 
         jPanel1.add(navbar);
-        navbar.setBounds(0, 0, 140, 410);
+        navbar.setBounds(0, 10, 140, 410);
 
         header.setBackground(new java.awt.Color(102, 0, 102));
 
@@ -69,7 +109,7 @@ public class dashboard extends javax.swing.JFrame {
         jPanel1.add(header);
         header.setBounds(140, 0, 510, 50);
 
-        jDesktopPane1.setBackground(new java.awt.Color(102, 102, 255));
+        jDesktopPane1.setBackground(new java.awt.Color(204, 204, 204));
 
         javax.swing.GroupLayout jDesktopPane1Layout = new javax.swing.GroupLayout(jDesktopPane1);
         jDesktopPane1.setLayout(jDesktopPane1Layout);
@@ -89,7 +129,7 @@ public class dashboard extends javax.swing.JFrame {
         getContentPane().setLayout(layout);
         layout.setHorizontalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addComponent(jPanel1, javax.swing.GroupLayout.DEFAULT_SIZE, 650, Short.MAX_VALUE)
+            .addComponent(jPanel1, javax.swing.GroupLayout.DEFAULT_SIZE, 653, Short.MAX_VALUE)
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -99,6 +139,24 @@ public class dashboard extends javax.swing.JFrame {
         pack();
         setLocationRelativeTo(null);
     }// </editor-fold>//GEN-END:initComponents
+
+    private void dashpaneMouseEntered(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_dashpaneMouseEntered
+   
+        dashpane.setBackground(bodycolor);
+        
+    }//GEN-LAST:event_dashpaneMouseEntered
+
+    private void dashpaneMouseExited(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_dashpaneMouseExited
+ dashpane.setBackground(navbarcolor);      
+    }//GEN-LAST:event_dashpaneMouseExited
+
+    private void dashpane1MouseEntered(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_dashpane1MouseEntered
+        // TODO add your handling code here:
+    }//GEN-LAST:event_dashpane1MouseEntered
+
+    private void dashpane1MouseExited(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_dashpane1MouseExited
+        // TODO add your handling code here:
+    }//GEN-LAST:event_dashpane1MouseExited
 
     /**
      * @param args the command line arguments
@@ -136,8 +194,12 @@ public class dashboard extends javax.swing.JFrame {
     }
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
+    private javax.swing.JPanel dashpane;
+    private javax.swing.JPanel dashpane1;
     private javax.swing.JPanel header;
     private javax.swing.JDesktopPane jDesktopPane1;
+    private javax.swing.JLabel jLabel1;
+    private javax.swing.JLabel jLabel3;
     private javax.swing.JPanel jPanel1;
     private javax.swing.JPanel navbar;
     // End of variables declaration//GEN-END:variables
